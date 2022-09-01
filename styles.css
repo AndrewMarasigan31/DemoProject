@@ -101,14 +101,14 @@ body {
 
 .cell.circle::before,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-    width: var(--mark-size);
-    height: var(--mark-size);
+    width: calc(var(--mark-size) * .9);;
+    height: calc(var(--mark-size) * .9);;
 }
  
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
-    width: calc(var(--mark-size) * .7);
-    height: calc(var(--mark-size) * .7);
+    width: calc(var(--mark-size) * .6);
+    height: calc(var(--mark-size) * .6);
     background-color: white;
 }
 
