@@ -143,14 +143,10 @@ function isDraw() {
 
 function placeMark(cell, currentClass) {
   cell.classList.add(currentClass);
-  // accesses row and column of current cell
   let row = cell.getAttribute('data-cell-row');
   let column = cell.getAttribute('data-cell-column');
-  // adds the move to the state array
   state[row][column] = currentClass;
-  // creates a copy of current state
   let tempstate = JSON.parse(JSON.stringify(state));
-  // pushes copy to history
   history.push(tempstate);
   console.log(history);
 }
