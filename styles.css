@@ -1,5 +1,6 @@
 *, *::after, *::before {
     box-sizing: border-box;
+    margin: 0;
 }
 
 :root {
@@ -8,7 +9,8 @@
 }
 
 body {
-    margin: 0;
+    font-family: "Audiowide", sans-serif;
+    color: #104d5a;
 }
 
 .board {
@@ -20,12 +22,13 @@ body {
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(3,auto);
+    background-color: #aacabe;
 }
 
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 2px solid black;
+    border: 2px solid #104d5a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +64,7 @@ body {
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before {
-    background-color: black;
+    background-color: #104d5a;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
@@ -78,6 +81,7 @@ body {
     position: absolute;
     width: calc(var(--mark-size) * .15);
     height: var(--mark-size);
+    background-color: #104d5a;
 }
 
 .cell.x::before,
@@ -101,46 +105,123 @@ body {
 
 .cell.circle::before,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-    width: calc(var(--mark-size) * .9);;
-    height: calc(var(--mark-size) * .9);;
+    width: calc(var(--mark-size) * .9);
+    height: calc(var(--mark-size) * .9);
+    background-color: #104d5a;
 }
  
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
     width: calc(var(--mark-size) * .6);
     height: calc(var(--mark-size) * .6);
-    background-color: white;
+    background-color: #aacabe;
 }
 
 .winning-message {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,.9);
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 5rem;
-    flex-direction: column;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
 }
 
 .winning-message button {
-    font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
-    padding: .25em .5em;
-    cursor: pointer;
+  font-size: 3rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: .25em .5em;
+  cursor: pointer;
 }
 
 .winning-message button:hover {
-    background-color: black;
-    color: white;
-    border-color: white;
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
 .winning-message.show {
-    display:flex;
+  display: flex;
+}
+
+.textContainer,
+.controlsContainer {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.textContainer {
+  top: 4vh;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.controlsContainer {
+  bottom: 13vh;
+}
+
+.controlsContainer button {
+  font-size: 1.5rem;
+  background-color: #aacabe;
+  color: #104d5a;
+  border: 2px solid #104d5a;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  font-family: "Audiowide", sans-serif;
+}
+
+.controlsContainer button:hover {
+  background-color: #104d5a;
+  color: #aacabe;
+}
+
+.history {
+  position: fixed;
+  bottom: 5vh;
+  display: none;
+  width: 130.67px;
+  display: none;
+  justify-content: space-evenly;
+}
+
+.show {
+  display: flex;
+}
+
+.turnContainer {
+  position: fixed;
+  top: 14vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.scoreContainer {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+@media (orientation: portrait), (max-width: 768px) {
+  .textContainer {
+    top: 16vh;
+  }
+  .turnContainer {
+    top: 24vh;
+  }
+  .controlsContainer {
+    bottom: 20vh;
+  }
+  .history {
+    bottom: 13vh;
+  }
 }

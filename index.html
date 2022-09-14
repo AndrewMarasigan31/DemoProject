@@ -5,24 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
   <script src="index.js" defer></script>
-  <title>Document</title>
+  <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="board" id="board">
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
+    <div class="textContainer" id="textContainer">
+        <div class="text" id="text"></div>
     </div>
-    <div class="winning-message" id="winning-messsage">
-        <div data-winning-message-text></div>
-        <button id="restartButton">Restart</button>
+  
+    <div class="turnContainer" id="turnContainer">
+        <div class="turn" id="turn"></div>
+    </div>
+
+    <div class="board" id="board">
+      <div class="cell" data-cell-row="0" data-cell-column="0"></div>
+      <div class="cell" data-cell-row="0" data-cell-column="1"></div>
+      <div class="cell" data-cell-row="0" data-cell-column="2"></div>
+      <div class="cell" data-cell-row="1" data-cell-column="0"></div>
+      <div class="cell" data-cell-row="1" data-cell-column="1"></div>
+      <div class="cell" data-cell-row="1" data-cell-column="2"></div>
+      <div class="cell" data-cell-row="2" data-cell-column="0"></div>
+      <div class="cell" data-cell-row="2" data-cell-column="1"></div>
+      <div class="cell" data-cell-row="2" data-cell-column="2"></div>
+    </div>
+
+    <div class="controlsContainer" id="controlsContainer">
+        <div class="controls" id="controls">
+          <button id="restartButton">Restart</button>
+          <div class="history" id="history">
+            <button id="previousMove">&#9754;</button>
+            <button id="nextMove">&#9755;</button>
+          </div>
+        </div>
+    </div>
+  
+    <div class="scoreContainer" id="scoreContainer">
+        <div class="xScore" id="xScore"></div>
+        <div class="oScore" id="oScore"></div>
+        <div class="draws" id="draws"></div>
     </div>
 </body>
 </html>
